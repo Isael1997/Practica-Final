@@ -20,6 +20,60 @@ namespace Practica_Final.Controllers
             return View(db.Empleados.ToList());
         }
 
+
+        public ActionResult EActivos()
+        {
+            var lista = from datos in db.Empleados select datos;
+
+
+            lista = lista.Where(a => a.Estatus.Equals("Activo"));
+
+            return View(lista);
+        }
+
+        public ActionResult EInactivos()
+        {
+            var lista = from datos in db.Empleados select datos;
+
+
+            lista = lista.Where(a => a.Estatus.Equals("Inactivo"));
+
+            return View(lista);
+        }
+
+
+        public ActionResult EbyMoth(string Mes)
+        {
+
+            var lista = from datos in db.Empleados select datos;
+
+
+
+            if (Mes == null)
+            {
+                return View(db.Empleados.ToList());
+            }
+            else
+            {
+                lista = lista.Where(a => a.FechaI.Equals(Mes));
+
+                return View(lista);
+            }
+
+        }
+
+
+
+        public ActionResult TSalario()
+        {
+            var lista = from datos in db.Empleados select datos;
+
+            lista = lista.Where(a => a.Estatus.Equals("Activo"));
+
+
+            return View(lista);
+        }
+
         // GET: Empleados/Details/5
         public ActionResult Details(int? id)
         {

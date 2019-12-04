@@ -1,18 +1,21 @@
 ﻿@model IEnumerable<Practica_Final.Models.Empleados>
 
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "EbyMoth";
 }
 
-<h2>Listado</h2>
+<h2>Empleados por Mes</h2>
 
-<p>
-    @Html.ActionLink("Nuevo Empleado", "Create")
-</p>
+<form>
+    <input type="text" name="Mes" placeholder="Ingrese el Mes" />
+    <input type="submit" value="Buscar" />
+</form>
+
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayName("Codigo del Empleado")
+            @Html.DisplayName("Codigo de Empleado")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Nombres)
@@ -30,7 +33,7 @@
             @Html.DisplayNameFor(model => model.Cargo)
         </th>
         <th>
-            @Html.DisplayName("Fecha Incial")
+            @Html.DisplayName("Fecha Inical")
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Salario)
@@ -71,11 +74,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Estatus)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id })
-            </td>
+
         </tr>
     }
 

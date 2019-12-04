@@ -1,14 +1,13 @@
 ﻿@model IEnumerable<Practica_Final.Models.Departamentos>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Listado";
 }
 
 <h2>Listado</h2>
 
-<p>
-    @Html.ActionLink("Nuevo Empleado", "Create")
-</p>
+
+
 <table class="table">
     <tr>
         <th>
@@ -29,11 +28,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Nombre)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.Id })
-            </td>
+
         </tr>
     }
 

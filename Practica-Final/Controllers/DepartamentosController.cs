@@ -20,6 +20,11 @@ namespace Practica_Final.Controllers
             return View(db.Departamentos.ToList());
         }
 
+        public ActionResult Listado()
+        {
+            return View(db.Departamentos.ToList());
+        }
+
         // GET: Departamentos/Details/5
         public ActionResult Details(int? id)
         {

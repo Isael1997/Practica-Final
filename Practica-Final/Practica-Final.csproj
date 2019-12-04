@@ -280,6 +280,12 @@
     <Content Include="Views\Informes\Index.cshtml" />
     <Content Include="Views\Procesos\Index.cshtml" />
     <Content Include="Views\Matenimiento\Index.cshtml" />
+    <Content Include="Views\Empleados\EActivos.cshtml" />
+    <Content Include="Views\Empleados\EInactivos.cshtml" />
+    <Content Include="Views\Empleados\EbyMoth.cshtml" />
+    <Content Include="Views\Empleados\TSalario.cshtml" />
+    <Content Include="Views\Departamentos\Listado.cshtml" />
+    <Content Include="Views\Cargos\Listado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Practica_Final.Models.Empleados>
+
+@{
+    ViewBag.Title = "TSalario";
+}
+
+<h2>Salario Total</h2>
+
+
+<div>
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayName("Total")
+
+        </dt>
+
+        @foreach (var item in Model)
+        {
+            <dd>
+                .
+                @Html.DisplayFor(Modelitem => item.Salario))
+            </dd>
+        }
+
+    </dl>
+
+    <a href="../Nominas/Create" class="btn btn-primary"> &lsaquo; Atras</a>
+</div>
+
+

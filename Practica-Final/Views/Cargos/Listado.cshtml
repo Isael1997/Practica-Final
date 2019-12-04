@@ -1,0 +1,30 @@
+﻿@model IEnumerable<Practica_Final.Models.Cargos>
+
+
+@{
+    ViewBag.Title = "Listado";
+}
+
+<h2>Listado de los Cargos</h2>
+
+
+
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Cargo)
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cargo)
+            </td>
+
+        </tr>
+    }
+
+</table>
