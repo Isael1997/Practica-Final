@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="ProyectoFinalModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Cargos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Cargo" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Departamentos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodigoDepartamento" Type="int" />
+          <Property Name="Nombre" Type="varchar" MaxLength="50" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CodigoEmpleado" Type="int" />
+          <Property Name="Nombres" Type="varchar" MaxLength="100" />
+          <Property Name="Apellidos" Type="varchar" MaxLength="100" />
+          <Property Name="Telefono" Type="bigint" />
+          <Property Name="Departarmento" Type="text" />
+          <Property Name="Cargo" Type="varchar" MaxLength="50" />
+          <Property Name="FechaI" Type="date" />
+          <Property Name="Salario" Type="money" />
+          <Property Name="Estatus" Type="varchar" MaxLength="10" />
+        </EntityType>
+        <EntityType Name="Licencias">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Empleado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Desde" Type="date" />
+          <Property Name="Hasta" Type="date" />
+          <Property Name="Motivo" Type="text" />
+          <Property Name="Comentarios" Type="text" />
+        </EntityType>
+        <EntityType Name="Nominas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Año" Type="int" />
+          <Property Name="Mes" Type="int" />
+          <Property Name="Total" Type="money" />
+        </EntityType>
+        <EntityType Name="Permisos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Empleado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Desde" Type="date" />
+          <Property Name="Hasta" Type="date" />
+          <Property Name="Comentarios" Type="text" />
+        </EntityType>
+        <EntityType Name="Salidas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Empleado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="TipoSalida" Type="varchar" MaxLength="50" />
+          <Property Name="Motivo" Type="text" />
+          <Property Name="Fecha" Type="date" />
+        </EntityType>
+        <EntityType Name="Vacaciones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Empleado" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Desde" Type="date" />
+          <Property Name="Hasta" Type="date" />
+          <Property Name="Año" Type="int" />
+          <Property Name="Comentarios" Type="text" />
+        </EntityType>
+        <EntityContainer Name="ProyectoFinalModelStoreContainer">
+          <EntitySet Name="Cargos" EntityType="Self.Cargos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Departamentos" EntityType="Self.Departamentos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Licencias" EntityType="Self.Licencias" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Nominas" EntityType="Self.Nominas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Permisos" EntityType="Self.Permisos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Salidas" EntityType="Self.Salidas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Vacaciones" EntityType="Self.Vacaciones" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="ProyectoFinalModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Cargos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Departamentos">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoDepartamento" Type="Int32" />
+          <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Empleados">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CodigoEmpleado" Type="Int32" />
+          <Property Name="Nombres" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Apellidos" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="Telefono" Type="Int64" />
+          <Property Name="Departarmento" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Cargo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="FechaI" Type="DateTime" Precision="0" />
+          <Property Name="Salario" Type="Decimal" Precision="19" Scale="4" />
+          <Property Name="Estatus" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Licencias">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Empleado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Desde" Type="DateTime" Precision="0" />
+          <Property Name="Hasta" Type="DateTime" Precision="0" />
+          <Property Name="Motivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Comentarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Nominas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Año" Type="Int32" />
+          <Property Name="Mes" Type="Int32" />
+          <Property Name="Total" Type="Decimal" Precision="19" Scale="4" />
+        </EntityType>
+        <EntityType Name="Permisos">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Empleado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Desde" Type="DateTime" Precision="0" />
+          <Property Name="Hasta" Type="DateTime" Precision="0" />
+          <Property Name="Comentarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Salidas">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Empleado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="TipoSalida" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Motivo" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Fecha" Type="DateTime" Precision="0" />
+        </EntityType>
+        <EntityType Name="Vacaciones">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Empleado" Type="String" MaxLength="50" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="Desde" Type="DateTime" Precision="0" />
+          <Property Name="Hasta" Type="DateTime" Precision="0" />
+          <Property Name="Año" Type="Int32" />
+          <Property Name="Comentarios" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityContainer Name="ProyectoFinalEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Cargos" EntityType="Self.Cargos" />
+          <EntitySet Name="Departamentos" EntityType="Self.Departamentos" />
+          <EntitySet Name="Empleados" EntityType="Self.Empleados" />
+          <EntitySet Name="Licencias" EntityType="Self.Licencias" />
+          <EntitySet Name="Nominas" EntityType="Self.Nominas" />
+          <EntitySet Name="Permisos" EntityType="Self.Permisos" />
+          <EntitySet Name="Salidas" EntityType="Self.Salidas" />
+          <EntitySet Name="Vacaciones" EntityType="Self.Vacaciones" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="ProyectoFinalModelStoreContainer" CdmEntityContainer="ProyectoFinalEntities">
+          <EntitySetMapping Name="Cargos">
+            <EntityTypeMapping TypeName="ProyectoFinalModel.Cargos">
+              <MappingFragment StoreEntitySet="Cargos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Departamentos">
+            <EntityTypeMapping TypeName="ProyectoFinalModel.Departamentos">
+              <MappingFragment StoreEntitySet="Departamentos">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="CodigoDepartamento" ColumnName="CodigoDepartamento" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Empleados">
+            <EntityTypeMapping TypeName="ProyectoFinalModel.Empleados">
+              <MappingFragment StoreEntitySet="Empleados">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="CodigoEmpleado" ColumnName="CodigoEmpleado" />
+                <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+                <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
+                <ScalarProperty Name="Telefono" ColumnName="Telefono" />
+                <ScalarProperty Name="Departarmento" ColumnName="Departarmento" />
+                <ScalarProperty Name="Cargo" ColumnName="Cargo" />
+                <ScalarProperty Name="FechaI" ColumnName="FechaI" />
+                <ScalarProperty Name="Salario" ColumnName="Salario" />
+                <ScalarProperty Name="Estatus" ColumnName="Estatus" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Licencias">
+            <EntityTypeMapping TypeName="ProyectoFinalModel.Licencias">
+              <MappingFragment StoreEntitySet="Licencias">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="Desde" ColumnName="Desde" />
+                <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+                <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Nominas">
+            <EntityTypeMapping TypeName="ProyectoFinalModel.Nominas">
+              <MappingFragment StoreEntitySet="Nominas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="Total" ColumnName="Total" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Permisos">
+            <EntityTypeMapping TypeName="ProyectoFinalModel.Permisos">
+              <MappingFragment StoreEntitySet="Permisos">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="Desde" ColumnName="Desde" />
+                <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Salidas">
+            <EntityTypeMapping TypeName="ProyectoFinalModel.Salidas">
+              <MappingFragment StoreEntitySet="Salidas">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="TipoSalida" ColumnName="TipoSalida" />
+                <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+                <ScalarProperty Name="Fecha" ColumnName="Fecha" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Vacaciones">
+            <EntityTypeMapping TypeName="ProyectoFinalModel.Vacaciones">
+              <MappingFragment StoreEntitySet="Vacaciones">
+                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="Empleado" ColumnName="Empleado" />
+                <ScalarProperty Name="Desde" ColumnName="Desde" />
+                <ScalarProperty Name="Hasta" ColumnName="Hasta" />
+                <ScalarProperty Name="Año" ColumnName="Año" />
+                <ScalarProperty Name="Comentarios" ColumnName="Comentarios" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
