@@ -1,14 +1,12 @@
 ﻿@model IEnumerable<Practica_Final.Models.Permisos>
 
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Listado";
 }
 
-<h2>Listado</h2>
+<h2>Listado de los Permisos</h2>
 
-<p>
-    @Html.ActionLink("Nuevos Permisos", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -41,11 +39,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Comentarios)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id })
-            </td>
+
         </tr>
     }
 

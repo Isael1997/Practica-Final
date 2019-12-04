@@ -1,14 +1,12 @@
-﻿@model IEnumerable<Practica_Final.Models.Permisos>
+﻿@model IEnumerable<Practica_Final.Models.Vacaciones>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Listado";
 }
 
-<h2>Listado</h2>
+<h2>Listado de las Vacaciones</h2>
 
-<p>
-    @Html.ActionLink("Nuevos Permisos", "Create")
-</p>
+
 <table class="table">
     <tr>
         <th>
@@ -19,6 +17,9 @@
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Hasta)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Año)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Comentarios)
@@ -39,13 +40,12 @@
                 @Html.DisplayFor(modelItem => item.Hasta)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Comentarios)
+                @Html.DisplayFor(modelItem => item.Año)
             </td>
             <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id })
+                @Html.DisplayFor(modelItem => item.Comentarios)
             </td>
+
         </tr>
     }
 

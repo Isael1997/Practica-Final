@@ -286,6 +286,11 @@
     <Content Include="Views\Empleados\TSalario.cshtml" />
     <Content Include="Views\Departamentos\Listado.cshtml" />
     <Content Include="Views\Cargos\Listado.cshtml" />
+    <Content Include="Views\Nominas\Listado.cshtml" />
+    <Content Include="Views\Vacaciones\Listado.cshtml" />
+    <Content Include="Views\Salidas\Listado.cshtml" />
+    <Content Include="Views\Permisos\Listado.cshtml" />
+    <Content Include="Views\Licencias\Listado.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

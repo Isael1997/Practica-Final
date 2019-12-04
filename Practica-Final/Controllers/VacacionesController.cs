@@ -20,6 +20,11 @@ namespace Practica_Final.Controllers
             return View(db.Vacaciones.ToList());
         }
 
+        public ActionResult Listado()
+        {
+            return View(db.Vacaciones.ToList());
+        }
+
         // GET: Vacaciones/Details/5
         public ActionResult Details(int? id)
         {

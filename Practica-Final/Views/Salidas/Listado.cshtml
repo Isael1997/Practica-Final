@@ -1,15 +1,12 @@
 ﻿@model IEnumerable<Practica_Final.Models.Salidas>
 
+
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Listado";
 }
 
+<h2>Listado De Salidas</h2>
 
-<h2>Listado</h2>
-
-<p>
-    @Html.ActionLink("Nuevas Salidas", "Create")
-</p>
 <table class="table">
     <tr>
         <th>
@@ -42,11 +39,7 @@
             <td>
                 @Html.DisplayFor(modelItem => item.Fecha)
             </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.id })
-            </td>
+
         </tr>
     }
 
